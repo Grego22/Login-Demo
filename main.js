@@ -20,40 +20,34 @@ app.get('/', (request, response)=>{
 	response.render('index')
 })
 
-app.post('login', (request, resppnse)=>{
+app.post('login', (request, response)=>{
 	console.log('You are at the login page');
-	respone.render('/')
+	response.render('/')
 })
 
-const authenticate = (request, resppnse, next) =>{
+const authenticate = (request, response, next) =>{
 	console.log('Que Pasa Javier!?!?!?! TODO BIEN?!?!?!');
 	if(request.body.password === 'Iyard' && request.body.name === 'Grego'){
 		next()
 	}
 	else{
-		redirect('/')
+		response.redirect('/')
 	}
 }
 
 app.use(authenticate)
 
+app.get('/', (request, response)=>{
+	console.log('Trying to Log in');
+	response.render('login')
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.post('login', (request, response)=>{
+	console.log('You are at the login page');
+	request.checkBody('name', 'Your name is needed to login').notEmpty()
+	request.checkBody('password', 'Your password is needed to login').notEmpty()
+	response.render('login')
+})
 
 app.listen(7777, function() {
 	console.log('Looking good Billy Ray!!!')
