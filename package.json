@@ -2,17 +2,27 @@
   "name": "dp-site-login",
   "private": true,
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "mustache": "^2.3.0"
+    "express-validator": "^3.2.1",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grego22/Login-Demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Grego22/Login-Demo/issues"
+  },
+  "homepage": "https://github.com/Grego22/Login-Demo#readme",
+  "description": ""
 }
